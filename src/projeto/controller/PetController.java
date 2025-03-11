@@ -13,7 +13,7 @@ public class PetController {
     private final PetService tratamento = new PetService();
     private final Repository repository = new Repository();
 
-    public void criarPet(){
+    public void criarPet() {
         String[] perguntas = repository.lerFormulario();
 
         // Nome
@@ -69,17 +69,16 @@ public class PetController {
         repository.cadastrarPet(pet);
     }
 
-    public void lerPets(){
+    public void lerPets() {
         Repository repository = new Repository();
         String[][] pets = repository.lerPets();
         int id = 0;
         for (String[] pet : pets) {
             System.out.print(++id + ".    ");
-            for(String descricao : pet){
-                System.out.print(" - "+ descricao.substring(4));
+            for (String descricao : pet) {
+                System.out.print(descricao + " - ");
             }
             System.out.println();
         }
     }
-    public void lerPetsCriterio(int[] criterios){}
 }

@@ -8,14 +8,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Objects;
 
 public class Repository {
     Path pathPets = Paths.get("/home/pedro/IdeaProjects/desafioCadastroPets/Pets");
     Path pathFormulario = Paths.get("/home/pedro/IdeaProjects/desafioCadastroPets/src/projeto/repository/formulario.txt");
 
     public String[] lerFormulario() {
-        String[] perguntas = null;
+        String[] perguntas;
         try(BufferedReader br = Files.newBufferedReader(pathFormulario)) {
             perguntas = br.lines().toArray(String[]::new);
         }catch (IOException e) {
@@ -86,7 +85,7 @@ public class Repository {
             ++count;
                 try(BufferedReader br = Files.newBufferedReader(file.toPath())) {
                     for(int i = 0; i < perguntas.length; i++) {
-                        pets[count][i] = br.readLine();
+                        pets[count][i] = br.readLine().substring(4);
                     }
                 } catch (IOException e) {
                     System.out.println("Erro ao ler o arquivo" + count);
