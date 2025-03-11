@@ -1,10 +1,12 @@
 package projeto.controller;
 
+import projeto.service.CriteriaService;
+
 import static projeto.controller.PetController.sc;
 
 public class CriteriaController {
     public String[][] definirCriterios() {
-        String[][] criterios = new String[3][1];
+        String[][] criterios = new String[3][2];
         System.out.println("Qual o tipo de animal voce deseja buscar?");
         System.out.print("""
                     1 - Cachorro
@@ -14,9 +16,11 @@ public class CriteriaController {
         switch (opc) {
             case 1:
                 criterios[0][0] = "Cachorro";
+                criterios[0][1] = "1";
                 break;
             case 2:
                 criterios[0][0] = "Gato";
+                criterios[0][1] = "1";
                 break;
             default:
                 System.out.println("Criterio INVALIDO");
@@ -37,7 +41,7 @@ public class CriteriaController {
             switch (opcao) {
                 case 1:
                     System.out.print("Digite o nome e/ou o sobrenome: ");
-                    criterios[i][0] = sc.nextLine();
+                    criterios[i][0] = sc.nextLine().toUpperCase();
                     criterios[i][1] = String.valueOf(opcao);
                     break;
                 case 2:
@@ -70,9 +74,20 @@ public class CriteriaController {
                 default:
                     System.out.println("Digite um numero valido");
                     i--;
-                    continue;
             }
         }
         return criterios;
+    }
+    public void mostrarPetsComCriterios() {
+        String[][] petsComCriterios = new CriteriaService().buscarCriterios(definirCriterios());
+        if(petsComCriterios == null) {
+            System.out.println("Nenhum resultado encontrado");
+            return;
+        }
+        for (String[] pet : petsComCriterios) {
+            for (String criterio : pet) {
+                System.out.println(criterio);
+            }
+        }
     }
 }

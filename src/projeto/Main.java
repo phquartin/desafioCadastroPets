@@ -1,13 +1,14 @@
 package projeto;
 
+import projeto.controller.*;
 import projeto.controller.PetController;
-import projeto.service.PetService;
 
 import static projeto.controller.PetController.sc;
 
 public class Main {
     public static void main(String[] args) {
         PetController petController = new PetController();
+        CriteriaController criteriaController = new CriteriaController();
         System.out.println("\t\tBem-vindo ao sistema de cadastros");
         System.out.println("Aperte ENTER para entrar");
         sc.nextLine();
@@ -35,7 +36,10 @@ public class Main {
                     sc.nextLine();
                     break;
                 case 5:
-
+                    criteriaController.mostrarPetsComCriterios();
+                    System.out.println("Pressione ENTER para continuar");
+                    sc.nextLine();
+                    sc.nextLine();
                     break;
                 case 6:
                     sc.close();
