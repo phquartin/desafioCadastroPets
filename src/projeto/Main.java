@@ -2,6 +2,7 @@ package projeto;
 
 import projeto.controller.*;
 import projeto.controller.PetController;
+import projeto.util.Util;
 
 import static projeto.controller.PetController.sc;
 
@@ -13,7 +14,7 @@ public class Main {
         DeleteController deleteController = new DeleteController();
 
         System.out.println("\t\tBem-vindo ao sistema de cadastros");
-        System.out.println("Aperte ENTER para entrar");
+        System.out.println("Aperte "+ Util.ConsoleColors.GREEN + " ENTER " + Util.ConsoleColors.RESET + " para entrar");
         sc.nextLine();
         while (true) {
             System.out.print("""
@@ -29,27 +30,27 @@ public class Main {
                 switch (opcao) {
                     case 1:
                         petController.criarPet();
-                        System.out.println("Pressione ENTER para continuar");
+                        System.out.println("Pressione "+ Util.ConsoleColors.GREEN + " ENTER " + Util.ConsoleColors.RESET + " para continuar");
                         sc.nextLine();
                         break;
                     case 2:
                         changeController.alterarPet();
-                        System.out.println("Pressione ENTER para continuar");
+                        System.out.println("Pressione "+ Util.ConsoleColors.GREEN + " ENTER " + Util.ConsoleColors.RESET + " para continuar");
                         sc.nextLine();
                         break;
                     case 3:
                         deleteController.deletarPet();
-                        System.out.println("Pressione ENTER para continuar");
+                        System.out.println("Pressione "+ Util.ConsoleColors.GREEN + " ENTER " + Util.ConsoleColors.RESET + " para continuar");
                         sc.nextLine();
                         break;
                     case 4:
                         petController.lerPets();
-                        System.out.println("Pressione ENTER para continuar");
+                        System.out.println("Pressione "+ Util.ConsoleColors.GREEN + " ENTER " + Util.ConsoleColors.RESET + " para continuar");
                         sc.nextLine();
                         break;
                     case 5:
                         criteriaController.mostrarPetsComCriterios();
-                        System.out.println("Pressione ENTER para continuar");
+                        System.out.println("Pressione "+ Util.ConsoleColors.GREEN + " ENTER " + Util.ConsoleColors.RESET + " para continuar");
                         sc.nextLine();
                         sc.nextLine();
                         break;
@@ -57,7 +58,7 @@ public class Main {
                         sc.close();
                         return;
                     default:
-                        System.out.println("Numero Invalido");
+                        System.out.println(Util.ConsoleColors.RED_BOLD + "Numero Invalido" + Util.ConsoleColors.RESET);
                         break;
                 }
             }catch (Exception e) {

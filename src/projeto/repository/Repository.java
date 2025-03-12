@@ -1,6 +1,7 @@
 package projeto.repository;
 
 import projeto.model.Pet;
+import projeto.util.Util;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -11,15 +12,15 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 public class Repository {
-    Path pathPets = Paths.get("/Caminho/Para/A-Pasta/Pets");
-    Path pathFormulario = Paths.get("Caminho/Para/A-Pasta/desafioCadastroPets/src/projeto/repository/formulario.txt");
+    Path pathPets = Paths.get("/home/pedro/IdeaProjects/desafioCadastroPets/Pets");
+    Path pathFormulario = Paths.get("/home/pedro/IdeaProjects/desafioCadastroPets/src/projeto/repository/formulario.txt");
 
     public String[] lerFormulario() {
         String[] perguntas;
         try(BufferedReader br = Files.newBufferedReader(pathFormulario)) {
             perguntas = br.lines().toArray(String[]::new);
         }catch (IOException e) {
-            System.out.println("Erro ao ler o arquivo do formulario.");
+            System.out.println("Erro ao ler o arquivo do formulario."+ Util.ConsoleColors.RED_BOLD +" (Verifique o Caminho da Pasta em Repository.java)" + Util.ConsoleColors.RESET);
             throw new RuntimeException(e);
         }
         return perguntas;
