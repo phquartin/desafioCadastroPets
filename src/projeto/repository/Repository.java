@@ -110,17 +110,20 @@ public class Repository {
         String[][] pets = new String[files.length][perguntas.length];
 
         int count = -1;
+        int countLinha;
         for(File file:files){
             ++count;
                 try(BufferedReader br = Files.newBufferedReader(file.toPath())) {
-                    for(int i = 0; i < perguntas.length; i++) {
-                        pets[count][i] = br.readLine().substring(4);
+                    String linha;
+                    countLinha = 0;
+                    while((linha = br.readLine()) != null) {
+                        pets[count][countLinha] = linha.substring(4);
+                        countLinha++;
                     }
                 } catch (IOException e) {
                     System.out.println("Erro ao ler o arquivo" + e.getMessage());
                 }
             }
-
         return pets;
     }
 
