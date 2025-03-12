@@ -6,6 +6,8 @@ import projeto.model.TypeTipo;
 import projeto.repository.Repository;
 import projeto.service.PetService;
 
+import static projeto.util.Util.imprimirPets;
+
 import java.util.Scanner;
 
 public class PetController {
@@ -72,13 +74,6 @@ public class PetController {
     public void lerPets() {
         Repository repository = new Repository();
         String[][] pets = repository.lerPets();
-        int id = 0;
-        for (String[] pet : pets) {
-            System.out.print(++id + ".    ");
-            for (String descricao : pet) {
-                System.out.print(descricao + " - ");
-            }
-            System.out.println();
-        }
+        imprimirPets(pets);
     }
 }
