@@ -12,12 +12,13 @@ public class ChangeController {
         CriteriaController criteriaController = new CriteriaController();
         String[][] petsComCriterios = new CriteriaService().buscarCriterios(criteriaController.definirCriterios());
         if (petsComCriterios == null) {return;}
-        imprimirPets(petsComCriterios);
 
-        PetService tratamento = new PetService();
-        Repository repository = new Repository();
         int tamanhoAlterar = petsComCriterios[0].length;
         String[] petAlterar = new String[tamanhoAlterar];
+        PetService tratamento = new PetService();
+        Repository repository = new Repository();
+
+        imprimirPets(petsComCriterios);
         System.out.print("Digite o numero do pet que voce deseja alterar: ");
         try {
             int indexPet = Integer.parseInt(sc.nextLine()) - 1;

@@ -10,6 +10,8 @@ public class Main {
         PetController petController = new PetController();
         CriteriaController criteriaController = new CriteriaController();
         ChangeController changeController = new ChangeController();
+        DeleteController deleteController = new DeleteController();
+
         System.out.println("\t\tBem-vindo ao sistema de cadastros");
         System.out.println("Aperte ENTER para entrar");
         sc.nextLine();
@@ -31,6 +33,7 @@ public class Main {
                     changeController.alterarPet();
                     break;
                 case 3:
+                    deleteController.deletarPet();
                     break;
                 case 4:
                     petController.lerPets();

@@ -150,4 +150,14 @@ public class Repository {
         return null;
     }
 
+    public void deletarPet(String[] pet) {
+        Path pathPet = buscarPastaPet(pet);
+        try {
+            Files.delete(pathPet);
+        }catch (IOException e) {
+            System.out.println("Erro ao deletar o arquivo");
+        }catch (Exception e) {
+            System.out.println("Problema inesperado");
+        }
+    }
 }
