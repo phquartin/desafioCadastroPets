@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CriteriaService {
 
-    public String[][] buscarCriterios(String[][] criterios) {
+    public String[][] buscarCriterios(String[][] criterios) throws NullPointerException {
         if (criterios[0][0] == null) {return null;}
         int indexCriterioTipo = Integer.parseInt(criterios[0][1]);
         String[][] pets = new Repository().lerPets();

@@ -93,25 +93,33 @@ public class CriteriaController {
                     }
                 }catch (NumberFormatException e) {
                     System.out.println("Digite um numero para selecionar um criterio");
+                    return null;
                 }catch (Exception e) {
                     System.out.println("Ocorreu um erro inesperado ao tentar escolher um criterio");
+                    return null;
                 }
             }
             return criterios;
         }catch (NumberFormatException e) {
             System.out.println("Digite um numero para escolher o TIPO!");
+            return null;
         }catch (Exception e) {
             System.out.println("Ocorreu um erro ao tentar escolher o tipo de animal!");
+            return null;
         }
-        return null;
     }
 
     public void mostrarPetsComCriterios() {
-        String[][] petsComCriterios = new CriteriaService().buscarCriterios(definirCriterios());
-        if(petsComCriterios == null) {
+        try {
+            String[][] petsComCriterios = new CriteriaService().buscarCriterios(definirCriterios());
+            if (petsComCriterios == null) {
+                System.out.println("Nenhum resultado encontrado");
+                return;
+            }
+            imprimirPets(petsComCriterios);
+        }catch (NullPointerException e) {
+            System.out.println(e.getMessage());
             System.out.println("Nenhum resultado encontrado");
-            return;
         }
-        imprimirPets(petsComCriterios);
     }
 }

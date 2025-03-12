@@ -24,40 +24,44 @@ public class Main {
                     5 - Pesquisar pets por algum criterio
                     6 - Sair
                     :\s""");
-            int opcao = Integer.parseInt(sc.nextLine()); // Evita problemas com Buffer
-            switch (opcao) {
-                case 1:
-                    petController.criarPet();
-                    System.out.println("Pressione ENTER para continuar");
-                    sc.nextLine();
-                    break;
-                case 2:
-                    changeController.alterarPet();
-                    System.out.println("Pressione ENTER para continuar");
-                    sc.nextLine();
-                    break;
-                case 3:
-                    deleteController.deletarPet();
-                    System.out.println("Pressione ENTER para continuar");
-                    sc.nextLine();
-                    break;
-                case 4:
-                    petController.lerPets();
-                    System.out.println("Pressione ENTER para continuar");
-                    sc.nextLine();
-                    break;
-                case 5:
-                    criteriaController.mostrarPetsComCriterios();
-                    System.out.println("Pressione ENTER para continuar");
-                    sc.nextLine();
-                    sc.nextLine();
-                    break;
-                case 6:
-                    sc.close();
-                    return;
-                default:
-                    System.out.println("Numero Invalido");
-                    break;
+            try {
+                int opcao = Integer.parseInt(sc.nextLine()); // Evita problemas com Buffer
+                switch (opcao) {
+                    case 1:
+                        petController.criarPet();
+                        System.out.println("Pressione ENTER para continuar");
+                        sc.nextLine();
+                        break;
+                    case 2:
+                        changeController.alterarPet();
+                        System.out.println("Pressione ENTER para continuar");
+                        sc.nextLine();
+                        break;
+                    case 3:
+                        deleteController.deletarPet();
+                        System.out.println("Pressione ENTER para continuar");
+                        sc.nextLine();
+                        break;
+                    case 4:
+                        petController.lerPets();
+                        System.out.println("Pressione ENTER para continuar");
+                        sc.nextLine();
+                        break;
+                    case 5:
+                        criteriaController.mostrarPetsComCriterios();
+                        System.out.println("Pressione ENTER para continuar");
+                        sc.nextLine();
+                        sc.nextLine();
+                        break;
+                    case 6:
+                        sc.close();
+                        return;
+                    default:
+                        System.out.println("Numero Invalido");
+                        break;
+                }
+            }catch (Exception e) {
+                System.out.println(e.getMessage());
             }
         }
     }
