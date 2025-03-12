@@ -28,12 +28,18 @@ public class Main {
             switch (opcao) {
                 case 1:
                     petController.criarPet();
+                    System.out.println("Pressione ENTER para continuar");
+                    sc.nextLine();
                     break;
                 case 2:
                     changeController.alterarPet();
+                    System.out.println("Pressione ENTER para continuar");
+                    sc.nextLine();
                     break;
                 case 3:
                     deleteController.deletarPet();
+                    System.out.println("Pressione ENTER para continuar");
+                    sc.nextLine();
                     break;
                 case 4:
                     petController.lerPets();

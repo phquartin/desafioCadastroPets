@@ -69,6 +69,7 @@ public class PetController {
 
         Pet pet = new Pet(nome, tipo, sexo, endereco, idade, peso, raca);
         repository.cadastrarPet(pet);
+        System.out.println("Pet cadastrado com sucesso!");
     }
 
     public void lerPets() {
