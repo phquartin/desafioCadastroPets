@@ -80,6 +80,9 @@ java src/Main.java
 
 # Sobre o Desafio 📋
 
+<u> Ainda estou trabalhando em pequenas melhorias e algumas funcionalidades extras.</u>
+
+Apesar de ser um projeto de estudos, caso queira ajudar fique a vontade para sugeir melhorias e contribuir para o projeto. </u>
 
 ## 📍Passo 1 - Leitura do arquivo de base com as perguntas essenciais. 📄
 Crie um arquivo chamado `formulario.txt`, que deverá conter as seguintes perguntas:
