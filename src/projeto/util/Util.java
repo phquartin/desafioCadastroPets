@@ -5,10 +5,13 @@ public class Util {
         int id = 0;
         for (String[] pet : pets) {
             System.out.print(++id + ".    ");
-            for (String descricao : pet) {
-                System.out.print(descricao + " - ");
-            }
-            System.out.println();
+            imprimirPets(pet);
         }
+    }
+    public static void imprimirPets(String[] pet) {
+        for (String descricao : pet) {
+            System.out.print(descricao + " - ");
+        }
+        System.out.println();
     }
 }
