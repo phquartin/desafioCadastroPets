@@ -18,7 +18,7 @@ public class CriteriaService {
             for (String desc : pet) { // Buscando as descricoes com o index
                 if (pet[indexCriterioTipo].equals(criterios[0][0])) { // Buscando PETS com o TIPO do animal igual o informando em definirCriterios()
                     if(criterios[1][0] != null && criterios[2][0] != null) {
-                        if(pet[Integer.parseInt(criterios[1][1])].toUpperCase().contains(criterios[2][0].toUpperCase()) && pet[Integer.parseInt(criterios[2][1])].toUpperCase().contains(criterios[2][0].toUpperCase())){
+                        if(pet[Integer.parseInt(criterios[1][1])].toUpperCase().contains(criterios[1][0].toUpperCase()) && pet[Integer.parseInt(criterios[2][1])].toUpperCase().contains(criterios[2][0].toUpperCase())){
                             petsDescricao.add(desc);
                         }
                         continue;
