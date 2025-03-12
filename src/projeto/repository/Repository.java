@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 
 public class Repository {
     Path pathPets = Paths.get("/home/pedro/IdeaProjects/desafioCadastroPets/Pets");
@@ -72,6 +73,33 @@ public class Repository {
         }
     }
 
+    public void alterarPet(String[] pet, String[] petSemAlterar) {
+        Path pathPet = buscarPastaPet(petSemAlterar);
+
+        try (BufferedWriter bw = Files.newBufferedWriter(pathPet)) {
+            int id = -1;
+            for(String desc : pet) {
+                id++;
+                bw.write((id + 1) + " - " + desc);
+                bw.newLine();
+            }
+
+            String[] perguntas = lerFormulario();
+            if(perguntas.length > 7) {
+                for(int i = 7; i < perguntas.length; i++) {
+                    bw.write(perguntas[i]);
+                    bw.newLine();
+                }
+            }
+
+            bw.flush();
+
+        } catch (IOException e) {
+            System.out.println("Erro em escrever o usuario em um arquivo");
+            throw new RuntimeException(e);
+        }
+    }
+
     public String[][] lerPets() {
         String[] perguntas = lerFormulario();
         File name = new File(String.valueOf(pathPets));
@@ -94,6 +122,32 @@ public class Repository {
             }
 
         return pets;
+    }
+
+    public Path buscarPastaPet(String[] petBuscando) {
+        String[] perguntas = lerFormulario();
+        File fileName = new File(String.valueOf(pathPets));
+        File[] files = fileName.listFiles();
+        assert files != null;
+
+        String[][] pets = new String[files.length][perguntas.length];
+
+        int count = -1;
+        for(File file:files){
+            ++count;
+            try(BufferedReader br = Files.newBufferedReader(file.toPath())) {
+                for(int i = 0; i < perguntas.length; i++) {
+                    pets[count][i] = br.readLine().substring(4);
+                }
+                if(Arrays.equals(pets[count], petBuscando)) {
+                    return file.toPath();
+                }
+            } catch (IOException e) {
+                System.out.println("Erro ao ler o arquivo" + count);
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 
 }

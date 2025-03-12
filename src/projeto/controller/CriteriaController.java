@@ -14,7 +14,7 @@ public class CriteriaController {
                     2 - Gato
                     :\s""");
         try {
-            int opc = Integer.parseInt(sc.nextLine()); // Evita problemas com Buffer
+            int opc = Integer.parseInt(sc.nextLine()); // Evita problemas com ‘Buffer’
             switch (opc) {
                 case 1:
                     criterios[0][0] = "Cachorro";
@@ -40,7 +40,7 @@ public class CriteriaController {
                     7 - Concluir
                     :\s""");
                 try {
-                    int opcao = Integer.parseInt(sc.nextLine()); // Evita problemas com Buffer
+                    int opcao = Integer.parseInt(sc.nextLine()); // Evita problemas com ‘Buffer’
                     switch (opcao) {
                         case 1:
                             System.out.print("Digite o nome e/ou o sobrenome: ");
@@ -99,7 +99,7 @@ public class CriteriaController {
             }
             return criterios;
         }catch (NumberFormatException e) {
-            System.out.println("Digite um numero!");
+            System.out.println("Digite um numero para escolher o TIPO!");
         }catch (Exception e) {
             System.out.println("Ocorreu um erro ao tentar escolher o tipo de animal!");
         }

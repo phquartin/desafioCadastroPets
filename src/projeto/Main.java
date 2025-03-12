@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         PetController petController = new PetController();
         CriteriaController criteriaController = new CriteriaController();
+        ChangeController changeController = new ChangeController();
         System.out.println("\t\tBem-vindo ao sistema de cadastros");
         System.out.println("Aperte ENTER para entrar");
         sc.nextLine();
@@ -27,6 +28,7 @@ public class Main {
                     petController.criarPet();
                     break;
                 case 2:
+                    changeController.alterarPet();
                     break;
                 case 3:
                     break;
