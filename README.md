@@ -35,6 +35,7 @@ O sistema deve foi implementado utilizando conceitos de Orientação a Objetos e
 ### 🛠️ Pré-requisitos
 Certifique-se de ter instalado:
 - [Java JDK 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+- [Git](https://git-scm.com/downloads)
 
 ### 📥 Clonando o Repositório
   Antes de tudo, clone o repositório para sua máquina:
@@ -42,7 +43,15 @@ Certifique-se de ter instalado:
 git clone https://github.com/phquartin/desafioCadastroPets.git
 cd desafioCadastroPets
 ```
-Depois altere o caminho para a pasta "Pets" e "desafioCadastroPets"
+Para que tudo funcione acesse pelos arquivos o repositorio e mude o caminho das pastas
+
+Para acessar o repositorio acesse `/local/de/instalacao/desafioCadastroPets/src/projeto/repository/Repository.java`
+
+(para descobrir o local de instalacao, apos digitar no cmd -> `cd desafioCadastroPet` no titulo do cmd deve aparecer o caminho)
+
+Após isso altere o caminho para a pasta "Pets" e "desafioCadastroPets" 
+
+(as '/' podem mudar de sistema para sistema, no windows voce pode usar ' \\ ' ou ' // ')
 ```bash
 public class Repository {
     Path pathPets = Paths.get("/Caminho/Para/A-Pasta/Pets");
@@ -50,6 +59,11 @@ public class Repository {
 ````
 
 ### ▶️ Compilando e Executando
+
+- Caso tenha uma IDE instalada, rode o arquivo `Main` que se encontra dentro do `src/projeto`
+
+### OU
+
 Compile o código-fonte:
 ```bash
 javac -d out src/*.java
