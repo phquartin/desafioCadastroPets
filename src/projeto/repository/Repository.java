@@ -11,8 +11,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
 public class Repository {
-    Path pathPets = Paths.get("/home/pedro/IdeaProjects/desafioCadastroPets/Pets");
-    Path pathFormulario = Paths.get("/home/pedro/IdeaProjects/desafioCadastroPets/src/projeto/repository/formulario.txt");
+    Path pathPets = Paths.get("/Caminho/Para/A-Pasta/Pets");
+    Path pathFormulario = Paths.get("Caminho/Para/A-Pasta/desafioCadastroPets/src/projeto/repository/formulario.txt");
 
     public String[] lerFormulario() {
         String[] perguntas;
@@ -116,8 +116,7 @@ public class Repository {
                         pets[count][i] = br.readLine().substring(4);
                     }
                 } catch (IOException e) {
-                    System.out.println("Erro ao ler o arquivo" + count);
-                    e.printStackTrace();
+                    System.out.println("Erro ao ler o arquivo" + e.getMessage());
                 }
             }
 
@@ -143,8 +142,7 @@ public class Repository {
                     return file.toPath();
                 }
             } catch (IOException e) {
-                System.out.println("Erro ao ler o arquivo" + count);
-                e.printStackTrace();
+                System.out.println("Erro ao ler o arquivo" + e.getMessage());
             }
         }
         return null;

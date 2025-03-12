@@ -8,14 +8,10 @@ Instagram: [@devmagro 📸](https://x.com/devmagro)
 
 YouTube: [@devmagro 🎥](https://www.youtube.com/@devmagro)
 
-## Introdução
-Você chegou ao **primeiro grande desafio do guia**! 😎 Agora, é hora de colocar a mão na massa e aplicar seus conhecimentos na prática, criando um **Sistema de Adoção para Pets!**
-
-Leia TODO o desafio com ATENÇÃO antes de começar a faze-lo e respeite as regras, evite o uso do GPT ao máximo e use-o com sabedoria quando necessário!
 ## Objetivo
-Neste desafio, você será desafiado a criar um sistema de cadastro via CLI (interface de linha de comando), para nossos futuros adotantes poderem escolher o seu animalzinho.
+Neste desafio, fui desafiado a criar um sistema de cadastro via CLI (interface de linha de comando), para nossos futuros adotantes poderem escolher o seu animalzinho.
 
-O dono do abrigo de animais que será o usuário do seu programa será capaz de:
+O dono do abrigo de animais que será o usuário do programa será capaz de:
 
 - Cadastrar um novo pet
 - Buscar dados do pet cadastrado
@@ -24,9 +20,9 @@ O dono do abrigo de animais que será o usuário do seu programa será capaz de:
 - Listar pets por algum critério (idade, nome, raça)
 - E muito mais!
 
-O sistema deve ser implementado utilizando conceitos de Orientação a Objetos e outras boas práticas de programação. 🚀
+O sistema deve foi implementado utilizando conceitos de Orientação a Objetos e outras boas práticas de programação. 🚀
 
-## Conhecimentos que você irá aplicar:
+## Conhecimentos que apliquei:
 - Orientação a Objetos (OO)
 - Manipulação de arquivos e arrays
 - Java IO
@@ -34,13 +30,42 @@ O sistema deve ser implementado utilizando conceitos de Orientação a Objetos e
 - Boas práticas de código
 - File Systems
 
-# Requisitos do Desafio 📋
+## 🚀 Como Executar o Projeto
 
-O desafio será organizado em **PASSOS** em que você irá desenvolver novas funcionalidades para nossa aplicação CLI.
+### 🛠️ Pré-requisitos
+Certifique-se de ter instalado:
+- [Java JDK 17+](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
-Fique a vontade para criar e organizar entidades, serviços, utils e como desejar para este projeto!
+### 📥 Clonando o Repositório
+  Antes de tudo, clone o repositório para sua máquina:
+```bash
+git clone https://github.com/phquartin/desafioCadastroPets.git
+cd desafioCadastroPets
+```
+Depois altere o caminho para a pasta "Pets" e "desafioCadastroPets"
+```bash
+public class Repository {
+    Path pathPets = Paths.get("/Caminho/Para/A-Pasta/Pets");
+    Path pathFormulario = Paths.get("/Caminho/Para/A-Pasta/desafioCadastroPets/src/projeto/repository/formulario.txt");
+````
 
-Para iniciar, crie um Fork deste repositório e clone-o em sua máquina local, e também deixe sua ⭐ no repositório.
+### ▶️ Compilando e Executando
+Compile o código-fonte:
+```bash
+javac -d out src/*.java
+```
+E então execute o programa:
+```bash
+java -cp out Main
+```
+
+Se quiser rodar diretamente sem compilar antes:
+```bash
+java src/Main.java
+```
+
+# Sobre o Desafio 📋
+
 
 ## 📍Passo 1 - Leitura do arquivo de base com as perguntas essenciais. 📄
 Crie um arquivo chamado `formulario.txt`, que deverá conter as seguintes perguntas:
