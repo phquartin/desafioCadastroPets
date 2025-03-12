@@ -85,7 +85,7 @@ public class PetService {
         if (raca.isEmpty()) {
             return "NAO INFORMADO";
         }
-        if (raca.matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$")) {
+        if (raca.matches("^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\\- ]+$")) {
             return raca;
         }
         throw new RaceException("Raca deve conter apenas letras!");
