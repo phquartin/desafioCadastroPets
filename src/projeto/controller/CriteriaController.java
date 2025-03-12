@@ -40,12 +40,12 @@ public class CriteriaController {
                     7 - Concluir
                     :\s""");
                 try {
-                    Integer opcao = Integer.parseInt(sc.nextLine()); // Evita problemas com Buffer
+                    int opcao = Integer.parseInt(sc.nextLine()); // Evita problemas com Buffer
                     switch (opcao) {
                         case 1:
                             System.out.print("Digite o nome e/ou o sobrenome: ");
                             criterios[i][0] = sc.nextLine().toUpperCase();
-                            criterios[i][1] = String.valueOf(opcao);
+                            criterios[i][1] = "0";
                             break;
                         case 2:
                             System.out.print("Digite o sexo (M/F): ");
@@ -61,29 +61,29 @@ public class CriteriaController {
                                 i--;
                                 break;
                             }
-                            criterios[i][1] = String.valueOf(opcao);
+                            criterios[i][1] = "2";
                             break;
                         case 3:
                             System.out.print("Digite a idade: ");
                             String idade = String.valueOf(Double.parseDouble(sc.nextLine()));
                             criterios[i][0] = idade;
-                            criterios[i][1] = String.valueOf(opcao);
+                            criterios[i][1] = "4";
                             break;
                         case 4:
                             System.out.print("Digite o peso: ");
                             String peso = String.valueOf(Double.parseDouble(sc.nextLine()));
                             criterios[i][0] = peso;
-                            criterios[i][1] = String.valueOf(opcao);
+                            criterios[i][1] = "5";
                             break;
                         case 5:
                             System.out.print("Digite a raca: ");
                             criterios[i][0] = sc.nextLine();
-                            criterios[i][1] = String.valueOf(opcao);
+                            criterios[i][1] = "6";
                             break;
                         case 6:
                             System.out.print("Digite o endereco: ");
                             criterios[i][0] = sc.nextLine();
-                            criterios[i][1] = String.valueOf(opcao);
+                            criterios[i][1] = "3";
                             break;
                         case 7:
                             return criterios;
