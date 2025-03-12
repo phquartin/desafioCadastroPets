@@ -20,7 +20,7 @@ O dono do abrigo de animais que será o usuário do programa será capaz de:
 - Listar pets por algum critério (idade, nome, raça)
 - E muito mais!
 
-O sistema deve foi implementado utilizando conceitos de Orientação a Objetos e outras boas práticas de programação. 🚀
+O sistema foi implementado utilizando conceitos de Orientação a Objetos e outras boas práticas de programação. 🚀
 
 ## Conhecimentos que apliquei:
 - Orientação a Objetos (OO)
